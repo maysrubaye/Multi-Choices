@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		{% with blocks=page.body %}
+    {% for block in blocks %}
+        {% if block.block_type == 'heading' %}
+
+		<div class="col-md-5 home-head">
+			<h1>{{ block.value }}</h1> 
+            <br/>
+
+            <button class="home-btn"> <a href="{% slugurl 'appointments' %}">{{ page.button|richtext }}</a></button>
+		</div>
+        {% else %}
+
+		<div class="col-md-7 home-img">
+			{% image block.value height-600 %}
+		</div>
+		        {% endif %}
+    {% endfor %}
+	
+	</div>
+</div>
+
+	{% endwith %}
+{% endblock %}
