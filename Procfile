@@ -1,0 +1,1 @@
+web: gunicorn smithsite.wsgi --log-file -
