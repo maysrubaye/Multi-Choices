@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% load wagtailcore_tags %}
+{% block body_class %}template-taxinfo{% endblock %}
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+	<h1>{{ page.header|richtext }}</h1>
+
+	{% with blocks=page.body %}
+
+    {% for block in blocks %}
+        {% if block.block_type == 'heading' %}
+            <h1>{{ block.value }}</h1> 
+            <br/>
+        {% else %}
+           <p class="block-{{ block.block_type }}">
+               {{ block }}
+           </p>
+        {% endif %}
+    {% endfor %}
+
+	{% endwith %}
+		</div>
+
+
+		
+		<div class="col-md-8">
+<script src="https://app.box.com/upload-widget/embed.js?folderID=97483315074&height=420&isDescriptionFieldShown=0&isEmailRequired=0&title=Submit%20File(s)%20to%20Tax%20Documents%202019&token=n24l3q7f6f8aovkkdtebrsu19sf5th17&width=385" type="text/javascript"></script>
+		</div>
+
+</div>
+
+
+{% endblock %}
+
