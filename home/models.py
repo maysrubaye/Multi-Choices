@@ -14,7 +14,7 @@ class HomePage(Page):
     body = StreamField([
         ('heading', blocks.RichTextBlock(classname="full")),
         ('image', ImageChooserBlock()),
-    ])
+    ], default='')
     button = RichTextField(blank=False, default='')
     content_panels = Page.content_panels + [
         StreamFieldPanel('body'),
