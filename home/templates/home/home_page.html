@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
@@ -10,25 +11,24 @@
 <div class="container">
 	<div class="row">
 		{% with blocks=page.body %}
-    {% for block in blocks %}
-        {% if block.block_type == 'heading' %}
+    		{% for block in blocks %}
+        		{% if block.block_type == 'heading' %}
 
-		<div class="col-md-5 home-head">
-			<h1>{{ block.value }}</h1> 
-            <br/>
+					<div class="col-md-5 home-head">
+						<h1>{{ block.value }}</h1> 
+			            <br/>
+		  		{% endif %}
+    		{% endfor %}
+		{% endwith %}
 
-            <button class="home-btn"> <a href="{% slugurl 'appointments' %}">{{ page.button|richtext }}</a></button>
+        <button class="home-btn"> <a href="{% slugurl 'appointments' %}">{{ page.button|richtext }}</a></button>
 		</div>
-        {% else %}
 
 		<div class="col-md-7 home-img">
-			{% image block.value height-600 %}
+			<img src="{% static 'img/tax.png' %}" style="height: 75%;">
 		</div>
-		        {% endif %}
-    {% endfor %}
 	
 	</div>
 </div>
 
-	{% endwith %}
 {% endblock %}
