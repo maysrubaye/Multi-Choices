@@ -9,6 +9,8 @@ from wagtail.core import blocks
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 from wagtail.contrib.table_block.blocks import TableBlock
+from wagtail.core import hooks
+from smithsite import blockss
 
 class HomePage(Page):
     body = StreamField([
@@ -35,12 +37,21 @@ class Aptm(Page):
 
 
 class TaxInfo(Page):
-	body = StreamField([
-        ('icon_link', blocks.RichTextBlock()),
-    ])
-	content_panels = Page.content_panels + [
+	# body = StreamField([
+ #        ('icon_link', blocks.RichTextBlock()),
+ #    ])
+
+    body = StreamField([
+        ("tax_info_block", blockss.TaxInfoBlock())
+        ], null=True, blank=True)
+
+    content_panels = Page.content_panels + [
         StreamFieldPanel('body', classname="full"),
     ]
+
+@hooks.register('register_rich_text_features')
+def register_blockquote_feature(features):
+    features.default_features.append('code')
 
 		
 class Upload(Page):
