@@ -21,17 +21,17 @@
 }
 
 .home-img img {
-	height: 80%;
-    margin-top: -13%;
-    margin-left: -7%;
+    height: 85%;
+    margin-top: -7%;
+    margin-left: 0%;
 }
 
 .home-head h1 {
-    padding-top: 11%;
+    padding-top: 7%;
     font-family: Poppins;
     font-style: normal;
     font-weight: 600;
-    font-size: 63px;
+    font-size: 75px;
     z-index: 999;
 }
 
@@ -98,7 +98,7 @@
 }
 
 
-html {
-	font-family: Poppins;
+body {
+    font-family: Poppins;
 }
 
