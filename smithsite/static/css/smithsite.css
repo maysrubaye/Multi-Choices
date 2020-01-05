@@ -27,12 +27,12 @@
 }
 
 .home-head h1 {
-	padding-top: 20%;
-	font-family: Poppins;
-	font-style: normal;
-	font-weight: 600;
-	font-size: 55px;
-	line-height: 126.3%;
+    padding-top: 11%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 63px;
+    z-index: 999;
 }
 
 .home-btn {
