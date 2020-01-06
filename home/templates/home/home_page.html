@@ -14,7 +14,7 @@
     		{% for block in blocks %}
         		{% if block.block_type == 'heading' %}
 
-					<div class="col-md-5 home-head">
+					<div class="col-md-6 home-head">
 						<h1>{{ block.value }}</h1> 
 			            <br/>
 		  		{% endif %}
@@ -24,7 +24,7 @@
         <button class="home-btn"> <a href="{% slugurl 'appointments' %}">{{ page.button|richtext }}</a></button>
 		</div>
 
-		<div class="col-md-7 home-img">
+		<div class="col-md-6 home-img">
 			<img src="{% static 'img/tax.png' %}">
 		</div>
 	

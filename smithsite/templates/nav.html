@@ -1,39 +1,35 @@
 {% load static wagtailuserbar %}
 {% load wagtailcore_tags %}
-
-<div class="navv">
-  <ul>
-    <li>
-      <a href="{% slugurl 'pay' %}">Pay</a>
-    </li>
-
-
-    <li>
-      <a href="{% slugurl 'upload' %}">Upload</a>
-    </li>
-
-
-    <li>
-      <a href="{% slugurl 'tax-info' %}">Important tax info</a>
-    </li>
-
-    <li>
-      <a href="{% slugurl 'appointments' %}">Appointments</a>
-    </li>
-
-    <li>
-      <a href="{% slugurl 'home' %}">Home</a>
-    </li>
-
-
-    <li class="logo">
-      <a href="">
+    
+<nav class="container navbar navbar-expand-lg navbar-light">
+      <a class="logo navbar-brand" href="{% slugurl 'home' %}">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 166.18 64.17"><defs><style>.cls-1{fill:#2cb780;}.cls-2{font-size:21.16px;fill:#231f20;font-family:Poppins-Bold, Poppins;font-weight:700;}.cls-3{font-size:18px;font-family:Poppins-SemiBold, Poppins;font-weight:600;}</style></defs><title>logo</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_2-2" data-name="Layer 2"><circle class="cls-1" cx="14.71" cy="14.01" r="14.01"/><circle class="cls-1" cx="14.18" cy="49.65" r="14.18"/><text class="cls-2" transform="translate(43.62 28.35)">Multi<tspan x="0" y="23">Choices </tspan><tspan class="cls-3" x="92.22" y="23">LLC</tspan></text></g></g></svg>
       </a>
-    </li>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navTog" aria-controls="navTog" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  </ul>
-</div>
+  <div class="collapse navbar-collapse" id="navTog">
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% slugurl 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% slugurl 'appointments' %}">Appointments</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% slugurl 'tax-info' %}">Important tax info</a>
+            </li>            
+            <li class="nav-item">
+                <a class="nav-link" href="{% slugurl 'upload' %}">Upload</a>
+            </li>            
+            <li class="nav-item">
+                <a class="nav-link" href="{% slugurl 'pay' %}">Pay</a>
+            </li>
+        </ul>
+
+  </div>
+</nav>
 
 
 
@@ -72,7 +68,7 @@ li a:hover {
 
 .logo {
     float: left;
-    width: 10%;
+    width: 13%;
 }
 
 .logo a:hover {
@@ -80,12 +76,25 @@ li a:hover {
     border-bottom: 0px solid transparent;
 }
 
-/*  .logo {
-    float: left;
-  }*/
-
 .navv {
   margin: 2% 3%;
   margin-bottom: 5%;
 }
+
+@media screen and (max-width: 768px) {
+
+  .logo {
+      width: 50%;
+    }
+}
+
+@media screen and (min-width: 450px) and (max-width: 768px) {
+  
+ .logo {
+      width: 25%;
+}
+
+}
+
+
 </style>
