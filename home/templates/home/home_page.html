@@ -6,7 +6,16 @@
 
 {% block body_class %}template-homepage{% endblock %}
 
-
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+  display: inline;
+  font-size: 40px;
+  margin-top: 0px;
+}
+</style>
+</head>
 {% block content %}
 <div class="container">
 	<div class="row">
@@ -24,11 +33,54 @@
         <button class="home-btn"> <a href="{% slugurl 'appointments' %}">{{ page.button|richtext }}</a></button>
 		</div>
 
-		<div class="col-md-6 home-img">
-			<img src="{% static 'img/tax.png' %}">
+<div class="col-md-6 home-left">
+	<h1 class="countdown-header">Tax Day Countdown</h1>
+	<div class="countdown">
+	    <span id="days"></span>
+	    <span id="hours"></span>
+	    <span id="mins"></span>
+	    <span id="secs"></span>
+	    <span id="end"></span>
+    </div>
+</div>
+		<div class="col-md-12 home-img">
+			<img src="{% static 'img/home-graphics.svg' %}">
 		</div>
 	
 	</div>
 </div>
 
+    <script>
+    // The data/time we want to countdown to
+    var countDownDate = new Date("April 15, 2021").getTime();
+
+    // Run myfunc every second
+    var myfunc = setInterval(function() {
+
+    var now = new Date().getTime();
+    var timeleft = countDownDate - now;
+        
+    // Calculating the days, hours, minutes and seconds left
+    var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+        
+    // Result is output to the specific element
+    document.getElementById("days").innerHTML = days + ":"
+    document.getElementById("hours").innerHTML = hours + ":" 
+    document.getElementById("mins").innerHTML = minutes + ":" 
+    document.getElementById("secs").innerHTML = seconds 
+        
+    // Display the message when countdown is over
+    if (timeleft < 0) {
+        clearInterval(myfunc);
+        document.getElementById("days").innerHTML = ""
+        document.getElementById("hours").innerHTML = "" 
+        document.getElementById("mins").innerHTML = ""
+        document.getElementById("secs").innerHTML = ""
+        document.getElementById("end").innerHTML = "Now's the time to file your taxes!!";
+    }
+    }, 1000);
+    </script>
 {% endblock %}

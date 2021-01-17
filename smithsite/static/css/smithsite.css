@@ -16,18 +16,19 @@
 }
 
 .container {
-	max-width: 93%;
+	max-width: 85%;
 }
 
 .home-img img {
-    height: 85%;
-    margin-top: -7%;
-    margin-left: 0%;
-    z-index: -1;
+    width: 80%;
+    margin-top: 3%;
+}
+
+.home-img {
+    text-align: center;
 }
 
 .home-head h1 {
-    padding-top: 7%;
     font-family: Poppins;
     font-style: normal;
     font-weight: 600;
@@ -46,6 +47,7 @@
     font-size: 33px;
     color: #FFFFFF;
     padding: 3%;
+    border: none;
 }
 
 .home-btn a {
@@ -53,11 +55,14 @@
 	text-decoration: none;
 }
 
-.home-btn a:hover {
-	color: white;
-	text-decoration: none;
+.home-btn:hover {
+    background: white;
+    border: solid 3px #0CBE82;
 }
-
+.home-btn a:hover {
+    color: #0CBE82;
+    text-decoration: none;
+}
 
 .pay-btn {
 	margin-top: 10%;
@@ -118,6 +123,35 @@ body {
     color: black;
 }
 
+.countdown {
+    padding: 3% 5%;
+    width: 95%;
+    color: #0CBE82;
+    font-size: 3.5rem;
+    text-align: left;
+    border-color: lightslategrey;
+    border-style: dotted;
+    margin-right: 0;
+    margin-left: auto;
+    margin-top: 5%;
+}
+
+.countdown-header {
+    text-align: right;
+
+}
+
+.home-left {
+    font-family: monospace;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.navbar-nav .nav-link {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-size: 1.2rem;
+}
 
 
 @media screen and (max-width: 768px) {
