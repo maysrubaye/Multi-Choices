@@ -20,11 +20,16 @@
 }
 
 .home-img img {
-    width: 80%;
+    width: 100%;
     margin-top: 3%;
 }
 
 .home-img {
+    text-align: center;
+}
+
+
+.home-head {
     text-align: center;
 }
 
@@ -34,19 +39,19 @@
     font-weight: 600;
     font-size: 3.5rem;
     z-index: 999;
+    margin-bottom: 2%;
 }
 
 .home-btn {
-	width: 368px;
-    height: 86px;
+    width: 35%;
     background: #0CBE82;
     border-radius: 75px;
     font-family: Poppins;
     font-style: normal;
     font-weight: normal;
-    font-size: 33px;
+    font-size: 1.75rem;
     color: #FFFFFF;
-    padding: 3%;
+    padding: 1%;
     border: none;
 }
 
@@ -124,16 +129,10 @@ body {
 }
 
 .countdown {
-    padding: 3% 5%;
-    width: 95%;
     color: #0CBE82;
-    font-size: 3.5rem;
-    text-align: left;
-    border-color: lightslategrey;
-    border-style: dotted;
-    margin-right: 0;
-    margin-left: auto;
-    margin-top: 5%;
+    font-size: 2rem;
+    text-align: center;
+    margin: auto;
 }
 
 .countdown-header {
@@ -143,8 +142,11 @@ body {
 
 .home-left {
     font-family: monospace;
-    margin-top: auto;
     margin-bottom: auto;
+    margin-top: 3%;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .navbar-nav .nav-link {
@@ -153,13 +155,78 @@ body {
     font-size: 1.2rem;
 }
 
+.home-head > h1 > .rich-text > p {
+    font-size: 2.5rem;
+}
 
+.home-head > h1 > .rich-text > h3 {
+    font-size: 1.5rem;
+}
+
+.home-btn > a > .rich-text > p {
+    margin: 0;
+}
+
+.countdown-times {
+    color: lightgray;
+    font-size: 1.5rem;
+}
 @media screen and (max-width: 768px) {
 
 	.home-img img {
 		position: fixed;
 
 	}
+
+
+    .home-head > h1 > .rich-text > p {
+        font-size: 2rem;
+    }
+
+    .home-head > h1 > .rich-text > h3 {
+        font-size: 1rem;
+    }
+
+    .home-btn {
+        width: 100%;
+        height: unset;
+        background: #0CBE82;
+        border-radius: 75px;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.5rem;
+        color: #FFFFFF;
+        padding: 3%;
+        border: none;
+    }
+
+    .home-left {
+        margin-bottom: 10%;
+    }
+
+    .countdown-header {
+        text-align: center;
+        font-size: 2rem;
+        margin-top: 5%;
+    }
+
+    .countdown {
+        width: 95%;
+        color: #0CBE82;
+        border-color: lightslategrey;
+        border-style: dotted;
+        margin-right: 0;
+        margin-left: auto;
+        margin-top: 5%;
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 1%;
+    }
+
+    .home-btn > a > .rich-text > p {
+        margin: 0;
+    }
 
 	.navbar {
 		margin-bottom: 10%;

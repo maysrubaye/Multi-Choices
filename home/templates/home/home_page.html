@@ -23,9 +23,8 @@ p {
     		{% for block in blocks %}
         		{% if block.block_type == 'heading' %}
 
-					<div class="col-md-6 home-head">
+					<div class="col-md-12 home-head">
 						<h1>{{ block.value }}</h1> 
-			            <br/>
 		  		{% endif %}
     		{% endfor %}
 		{% endwith %}
@@ -33,9 +32,9 @@ p {
         <button class="home-btn"> <a href="{% slugurl 'appointments' %}">{{ page.button|richtext }}</a></button>
 		</div>
 
-<div class="col-md-6 home-left">
-	<h1 class="countdown-header">Tax Day Countdown</h1>
+<div class="col-md-12 home-left">
 	<div class="countdown">
+		<span>Tax Day Countdown </span>
 	    <span id="days"></span>
 	    <span id="hours"></span>
 	    <span id="mins"></span>
@@ -57,30 +56,49 @@ p {
     // Run myfunc every second
     var myfunc = setInterval(function() {
 
-    var now = new Date().getTime();
-    var timeleft = countDownDate - now;
-        
-    // Calculating the days, hours, minutes and seconds left
-    var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
-        
-    // Result is output to the specific element
-    document.getElementById("days").innerHTML = days + ":"
-    document.getElementById("hours").innerHTML = hours + ":" 
-    document.getElementById("mins").innerHTML = minutes + ":" 
-    document.getElementById("secs").innerHTML = seconds 
-        
-    // Display the message when countdown is over
-    if (timeleft < 0) {
-        clearInterval(myfunc);
-        document.getElementById("days").innerHTML = ""
-        document.getElementById("hours").innerHTML = "" 
-        document.getElementById("mins").innerHTML = ""
-        document.getElementById("secs").innerHTML = ""
-        document.getElementById("end").innerHTML = "Now's the time to file your taxes!!";
-    }
+	    var now = new Date().getTime();
+	    var timeleft = countDownDate - now;
+	        
+	    // Calculating the days, hours, minutes and seconds left
+	    var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+	    var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	    var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+	    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+	        
+	    // Result is output to the specific element
+	    if (days > 1) {
+		    document.getElementById("days").innerHTML = days + "<span class='countdown-times'> days </span>"
+	    } else {
+		    document.getElementById("days").innerHTML = days + "<span class='countdown-times'> day </span>"
+	    }
+
+	    if (hours > 1) {
+		    document.getElementById("hours").innerHTML = hours + "<span class='countdown-times'> hours </span>"
+	    } else {
+		    document.getElementById("hours").innerHTML = hours + "<span class='countdown-times'> hour </span>"
+	    }
+
+	    if (minutes > 1) {
+		    document.getElementById("mins").innerHTML = minutes + "<span class='countdown-times'> minutes </span>"
+	    } else {
+		    document.getElementById("mins").innerHTML = minutes + "<span class='countdown-times'> minute </span>"
+	    }
+
+	    if (seconds > 1) {
+		    document.getElementById("secs").innerHTML = seconds + "<span class='countdown-times'> seconds </span>"
+	    } else {
+		    document.getElementById("secs").innerHTML = seconds + "<span class='countdown-times'> second </span>"
+	    }
+	        
+	    // Display the message when countdown is over
+	    if (timeleft < 0) {
+	        clearInterval(myfunc);
+	        document.getElementById("days").innerHTML = ""
+	        document.getElementById("hours").innerHTML = "" 
+	        document.getElementById("mins").innerHTML = ""
+	        document.getElementById("secs").innerHTML = ""
+	        document.getElementById("end").innerHTML = "Now's the time to file your taxes!!";
+	    }
     }, 1000);
     </script>
 {% endblock %}
