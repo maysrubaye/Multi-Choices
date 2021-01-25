@@ -64,7 +64,7 @@
     background: white;
     border: solid 3px #0CBE82;
 }
-.home-btn a:hover {
+.home-btn:hover > a {
     color: #0CBE82;
     text-decoration: none;
 }
@@ -171,6 +171,20 @@ body {
     color: lightgray;
     font-size: 1.5rem;
 }
+
+.cal-left {
+    width: 100%;
+    height: 1080px;
+}
+
+.calendly-inline-widget {
+    height: 100%;
+    position: relative;
+    top: -8%;
+    right: -5%;
+    width: 100%;
+}
+
 @media screen and (max-width: 768px) {
 
 	.home-img img {
