@@ -20,7 +20,7 @@
 }
 
 .home-img img {
-    width: 100%;
+    width: 85%;
     margin-top: 3%;
 }
 
@@ -52,7 +52,7 @@
     font-size: 1.75rem;
     color: #FFFFFF;
     padding: 1%;
-    border: none;
+    border: solid 3px #0CBE82;
 }
 
 .home-btn a {

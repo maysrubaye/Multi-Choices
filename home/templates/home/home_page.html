@@ -34,7 +34,7 @@ p {
 
 <div class="col-md-12 home-left">
 	<div class="countdown">
-		<span>Tax Day Countdown </span>
+		<span id="title">Tax Day Countdown </span>
 	    <span id="days"></span>
 	    <span id="hours"></span>
 	    <span id="mins"></span>
@@ -93,11 +93,12 @@ p {
 	    // Display the message when countdown is over
 	    if (timeleft < 0) {
 	        clearInterval(myfunc);
-	        document.getElementById("days").innerHTML = ""
-	        document.getElementById("hours").innerHTML = "" 
-	        document.getElementById("mins").innerHTML = ""
-	        document.getElementById("secs").innerHTML = ""
-	        document.getElementById("end").innerHTML = "Now's the time to file your taxes!!";
+	        document.getElementById("title").innerHTML = "";
+	        document.getElementById("days").innerHTML = "";
+	        document.getElementById("hours").innerHTML = ""; 
+	        document.getElementById("mins").innerHTML = "";
+	        document.getElementById("secs").innerHTML = "";
+	        document.getElementById("end").innerHTML = "Now's the time to file your taxes!";
 	    }
     }, 1000);
     </script>
